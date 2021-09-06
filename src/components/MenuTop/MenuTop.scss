@@ -1,0 +1,182 @@
+.MenuTop{
+    position: fixed;
+    top: 0;
+    right: 100px;
+    display: flex;
+    flex: 1;
+    z-index: 5;
+
+    .cajas{
+        width: 150px;
+        height: 30px;
+        background-color: #6B63B5;
+        color: white;
+        padding-top: 10px;
+        text-align: center;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        font-size: 15px;
+        cursor: pointer;
+        z-index: 2;
+        font-weight: 600;
+
+        .img1{
+            width: 10px;
+        }
+        .img2{
+            width: 15px;
+        }
+    }
+
+
+    .favoritos{
+        border-bottom-left-radius: 10px;
+    }
+
+    .agregar{
+        border-bottom-right-radius: 10px;
+    }
+
+    
+@media only screen and (max-width: 762px) {
+    .favoritos{
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 0px;
+    }
+
+
+    .agregar{
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 0px;
+    }
+  }
+
+    .dropdown{
+        width: 300px;
+        height: auto;
+        background-color: #6B63B5;
+        margin-left: -300px;
+        padding-top: 30px;
+        z-index: 1;
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+        pointer-events: none;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        display: none;
+
+
+        .personaje{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        }
+
+        .circular--landscape2 {
+            display: inline-block;
+            position: relative;
+            width: 50px;
+            height: 50px;
+            margin: 15px;
+            overflow: hidden;
+            border-radius: 50%;
+
+            img {
+                width: auto;
+                height: 80px;
+            }
+            }
+        p{
+            color: white;
+            padding-top: 10px;
+            font-weight: 500;
+            font-size: 14px;
+
+        }
+
+        .img3{
+            width: 31px;
+            padding-top: 23px;
+            height: 36px;
+            margin-left: 18px;
+            cursor: pointer;
+        }
+        @media only screen and (max-width: 310px) {
+            p{
+                font-size: 16px;
+            }
+            .img3{
+                width: 31px;
+                height: 36px;
+                margin-left: 5px;
+            }
+            .circular--landscape2 {
+                margin-top: 15px;
+                margin-left:0px;
+                margin-right:0px;
+            }
+        }
+        .linea{
+            width: 90%;
+            height: 7px;
+            background-color: #403B6D;
+            margin: auto;
+        }
+        
+    }
+
+    .dropdown.show{
+        opacity: 1;
+        pointer-events: visible;
+        display: block;
+     }
+
+    
+}
+
+
+@media only screen and (max-width: 762px) {
+    .dropdown.show{
+        width: 300px;
+        height: auto;
+        background-color: #6B63B5;
+        margin-left: -300px;
+        padding-top: 0px;
+        padding-bottom: 30px;
+     }
+    .MenuTop {
+        position: fixed;
+        top: inherit;
+        bottom: 0;
+        left: 28%;
+        display: flex;
+        align-items: end;
+        .cajas{
+            box-shadow: 0px -7px 5px rgb(0 0 0 / 90%);
+        }
+    }
+  }
+
+  @media only screen and (max-width:550px) {
+    .dropdown.show{
+        width: 100%;
+        height: auto;
+        background-color: #6B63B5;
+        margin-left: -100%;
+        padding-top: 0px;
+        padding-bottom: 30px;
+     }
+    .MenuTop{
+        position: fixed;
+        top: inherit;
+        bottom: 0;
+        left: 5px;
+        right: 5px;
+        display: flex;
+        align-items:end;
+        z-index: 5;
+    .cajas{
+        width: 50%;
+    }
+}
+    
+  }

@@ -1,0 +1,45 @@
+.header {
+    display: flex;
+    justify-content: center;
+    background-image: url("../../assets/img/Background.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: #19171b;
+    background-blend-mode:hard-light;
+    height: 750px;
+    flex-direction: column;
+
+
+    &__logo {
+        display: flex;
+        justify-content: center;
+
+
+        svg {
+            width: 200px;
+          }
+
+    }
+
+    h3{
+        text-align: center;
+        color: white;
+        // margin-bottom: 15%;
+        font-size: 25px;
+        letter-spacing: 3px
+    }
+    
+
+}
+
+@media only screen and (max-width: 762px) {
+    .header {
+        background-image: url("");
+        background-blend-mode:inherit;
+        background-color: black;
+        margin-top: -80px;
+        height: 650px;
+    }
+  }
+
