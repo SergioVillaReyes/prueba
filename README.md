@@ -2,17 +2,34 @@
 Este proyecto  esta realizado en React JS 17.0.2, utilizando estilos SASS y Flexbox y  JSON server para el manejo de personajes y Redux para agregar a favoritos.
 
 1.- Para levantar el proyecto es necesario instalar las siguientes dependencias:
+
 json-server
+
 flexbox
+
 react-redux
+
 redux
+
 sass
+
 uuid
+
+
+Cambiar las rutas en la carpeta utils/constans.js por http://localhost:5000/personajes , http://localhost:5000/estudiantes y http://localhost:5000/staff 
+y correr el comando startjson para iniciar json server en el puerto 5000 y poder hacer el agregado de personaje.
+
+
 2.- Al ingresar veremos un listado de personajes, con colores en el fondo de la imagen  correspondientes a la casa a ala cual pertenecen.
+
 3.- Los botones centrales sirven para filtrar a los personajes ya sea por STAFF o ESTUDIANTES.
+
 4.- Se cuenta con la funcionalidad de agregar personajes extras.
+
 5.- Al dar click en la banderilla de la esquina se agregan los personajes a un menú superior a manera de "favoritos", ahí mismo podemos eliminar ese personaje de la sección de favoritos también.
+
 6.- Diseno responsivo.
+
 
 
 Me parecio interesante la tematica del ejercicio ya que pude darme cuenta que el comportamiento del sitio seria para darse cuenta de la forma de manipular los objetos en flexbok de arriba a abajo o viceversa, la seleccion de colores a cada casa y la creacion de personajeson trabajos con los que se puede medir bien el nivel de manipulacion de alguien sobre su codigo.
