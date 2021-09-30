@@ -19,37 +19,51 @@ export default function CardsPersonajes(props){
    
     const onClick = e => {
 
+        e.preventDefault();
+
         const arar = e.target.value;
         
         const answer_array = arar.split(' - ');
 
         const name = answer_array[0];
         const image = answer_array[1];
-        
-        setFormValue({
-            ...formValue,
-            id:uuid(),
-            name,
-            image
-        })
 
-
-        e.preventDefault();
-
-        // console.log('sadas',answer_array[0]);
-
-        // const {name, image} = formValue;
         const favoritosStorage = localStorage.getItem("favoritos");
 
-        addFavorito({
-            id:uuid(),
-            name,
-            image
-            });
+        const contar = JSON.parse(favoritosStorage);
+
+        // console.log('contar',contar.length);
+        
+        if(contar.length > 4){
+
+            Swal.fire(
+                'Upps!',
+                'Solo puede agregar 5 personajes a favoritos'
+              )
+
+        }else{
+
+            setFormValue({
+                ...formValue,
+                id:uuid(),
+                name,
+                image
+            })
+    
+    
+            // const {name, image} = formValue;
+            addFavorito({
+                id:uuid(),
+                name,
+                image
+                });
+
+
+        }
+
 
 
     }
-    console.log('formValue',formValue);
 
     const { url } = props;
 
