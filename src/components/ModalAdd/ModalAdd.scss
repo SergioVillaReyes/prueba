@@ -1,0 +1,175 @@
+.modal{
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba($color: #000000, $alpha: 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    pointer-events: none;
+    z-index: 4;
+    overflow: scroll;
+
+
+
+        .modal-showmodal.content{
+            transform:translateY(0);
+        }
+
+        .modal-header{
+            padding: 10px;
+                p{
+                    display: flex;
+                    justify-content: end;
+                    margin-top: -15px;
+                    cursor: pointer;
+                }
+        }
+        .modal-title{
+            margin: 0;
+        }
+        .modal-body{
+            display: flex;
+            flex-wrap: wrap;
+
+                .inputs{
+                    width: 47%;
+                    margin: 6px;
+
+                        p{
+                            margin: inherit;
+                        }
+
+                        .inp{
+                            width: 100%;
+                            height: 50px;
+                            background: #f2f2f2;
+                            border: none;
+                            border-bottom: 1px solid #525151;
+                        }
+
+                        .radios{
+                            display: flex;
+                            justify-content: space-between;
+                            padding-right: 20px;
+                        }
+                        .inputfile {
+                            width: 0.1px;
+                            height: 0.1px;
+                            opacity: 0;
+                            overflow: hidden;
+                            position: absolute;
+                            z-index: -1;
+                        }
+                        .inputfile + label {
+                            font-size: 1.25em;
+                            font-weight: 700;
+                            color: white;
+                            background-color: black;
+                            display: inline-block;
+                            padding: 15px;
+                        
+                        }
+                        
+                        .inputfile:focus + label,
+                        .inputfile + label:hover {
+                            background-color: rgb(202, 202, 202);
+                        }
+                        .inputfile + label {
+                            cursor: pointer; /* "hand" cursor */
+                        }
+                        input[type='radio'] { 
+                            transform: scale(2); 
+                        }
+                }
+
+                
+                @media only screen and (max-width: 880px) {
+
+                    .inputs{
+                        width: 90%;
+                        margin: 6px;
+                            
+                        .inp{
+                            height: 40px;
+                        }
+                        .inputfile + label {
+                            font-size: 1em;
+                            font-weight: 700;
+                            color: white;
+                            background-color: black;
+                            display: inline-block;
+                            padding: 5px;
+                        
+                        }
+                        input[type='radio'] { 
+                            transform: scale(1); 
+                        }
+                    }
+                    
+                  }
+        }
+
+        .modal-footer{
+            padding: 10px;
+            text-align: center;
+                .button{
+                    width: 240px;
+                    height: 50px;
+                    background: rgba(0, 0, 0, 0.6);
+                    border: 4px solid #6B63B5;
+                    box-sizing: border-box;
+                    border-radius: 4px;
+                    color: white;
+                    font-size: 24px;
+                    cursor: pointer;
+                }
+        }
+
+        @media only screen and (max-width: 880px) {
+
+            .modal-footer{
+                padding: 10px;
+                text-align: center;
+                    .button{
+                        width: 240px;
+                        height: 40px;
+                        background: rgba(0, 0, 0, 0.6);
+                        border: 4px solid #6B63B5;
+                        box-sizing: border-box;
+                        border-radius: 4px;
+                        color: white;
+                        font-size: 24px;
+                        cursor: pointer;
+                    }
+            }
+            
+          }
+}
+.modal-content{
+    width: 50%;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    transform: translateY(-200px);
+    transition: all 0.3s ease-in-out;
+}
+@media only screen and (max-width: 880px) {
+
+    .modal-content{
+        width: 86%;
+        margin-top: 60%;
+    }
+    
+  }
+.modal.show{
+    opacity: 1;
+    pointer-events: visible;
+        .modal-content{
+        transform: translateY(0);
+        }
+}

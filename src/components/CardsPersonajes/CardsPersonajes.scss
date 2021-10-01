@@ -1,0 +1,377 @@
+.contenedor{
+    max-width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 150px;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    position: absolute;
+    top: 70%;
+    
+
+        .cardbox {
+            width: 45%;
+            height: 265px;
+            padding: 1em;
+            margin: 0 2px 2px 0;
+            margin-bottom: 20px;
+
+            
+        .card {
+            width: 515px;
+            height: auto;
+            background-color: #fff;
+            margin: 10px 0;
+            cursor: pointer;
+            border-radius: 10px;
+            margin: auto;
+            margin-bottom: 25px;
+            display: flex;
+            flex-wrap: inherit;
+
+
+              &__img-personaje{
+              width: 40%;
+              height: 200px;
+              background: black;
+              border-top-left-radius: 10px;
+              border-bottom-left-radius: 10px;
+
+
+                .circular--landscape {
+                display: inline-block;
+                position: relative;
+                width: 150px;
+                height: 150px;
+                margin: 25px;
+                overflow: hidden;
+                border-radius: 50%;
+
+                img {
+                    width: auto;
+                    height: 230px;
+                }
+                }
+
+                @media only screen and (max-width: 1108px) {
+                    .circular--landscape{
+                        width: 120px;
+                        height: 120px;
+                            img{
+                                height: 195px;
+                            }
+                    }
+                  }
+
+                  @media only screen and (max-width: 830px) {
+                    .circular--landscape{
+                        width: 100px;
+                        height: 100px;
+                        margin-left: 20px;
+                            img{
+                                height: 145px;
+                            }
+                    }
+                  }
+            
+            
+
+              @media only screen and (max-width: 730px) {
+                .circular--landscape{
+                    width: 100px;
+                    height: 100px;
+                    display: block;
+                    margin-left: auto;
+                    margin-right: auto;
+                        img{
+                            height: 145px;
+                        }
+                }
+              }
+
+
+
+              
+        
+          }
+
+          .Gryffindor{
+            background: linear-gradient(to bottom right, rgb(255, 0, 0), rgb(253, 208, 124));
+          }
+
+          .Slytherin{
+            background: linear-gradient(135deg, #1C792B 0%, #82E95E 100%);
+          }
+
+          .Ravenclaw{
+            background: linear-gradient(135deg, #0597B7 0%, #66D1FF 100%);
+          }
+
+          .Hufflepuff{
+            background: linear-gradient(135deg, #FFC700 0%, #FFF388 100%);
+          }
+
+              @media only screen and (max-width: 730px) {
+                &__img-personaje {
+                    width: 100%;
+                    height: 145px;
+                    background:black;
+                    border-top-left-radius: 10px;
+                    border-top-right-radius: 10px;
+                    border-bottom-left-radius: 0px;
+                }
+              }
+
+              &__datos-personaje{
+                width: 60%;
+                height: 200px;
+                display: wrap;
+
+                .datosTop{
+
+                display: flex;
+
+                .lista{
+                    display: flex;
+                    flex-flow: inherit;
+                }
+
+                    p{
+                        font-size: 14px;
+                        margin-left: 15px;
+                        margin-top: 15px;
+                        color: gray;
+                        display: flex;
+                        margin-bottom: auto;
+                    }
+
+                    .diagonal{
+                        display: block;
+                    }
+
+                    .btnFavoritos{
+                        width: 20px;
+                        height: 22px;
+                        background-image: url("../../assets/img/Rectangle\ 1.png");
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        margin-left: 100px;
+                        margin-top: 15px;
+                    }
+
+                    
+          @media only screen and (max-width: 1108px) {
+            .btnFavoritos{
+                margin-left: 40px;
+            }
+          }
+
+          @media only screen and (max-width: 855px) {
+
+            .diagonal{
+                display: none;
+            }
+            
+
+          }
+
+          @media only screen and (max-width: 730px) {
+            .lista{
+                display: flex;
+                flex-flow: column;
+            }
+            .btnFavoritos{
+                width: 50px;
+                height: 50px;
+            }
+            
+            p{
+                font-size: 19px;
+                margin-top: 0px;
+                margin-left: 0px;
+            }
+          }
+
+          @media only screen and (max-width: 530px) {
+            .lista{
+                display: flex;
+                flex-flow: column;
+            }
+            .btnFavoritos{
+                width: 30px;
+                height: 30px;
+                margin-left: 5px;
+            }
+            
+            p{
+                font-size: 14px;
+                margin-top: 10px;
+                margin-left: 0px;
+                margin-bottom: 0px;
+            }
+          }
+
+                }
+
+
+                .nombreCaracter{
+                    margin-left: 15px;
+                    flex-wrap: wrap;
+                    font-size: 22px;
+                    margin-top: inherit;
+                    margin-bottom: 10px;
+                    font-weight: bolder;
+                    width: 60%;
+                }
+                .nombrePersonaje{
+                    opacity: 0;
+                    cursor: pointer;
+                    width: 22px;
+                }
+                .imgPersonaje{
+                    opacity: 0;
+                    cursor: pointer;
+                }
+                .submitPersonaje{
+                    opacity: 0;
+                    cursor: pointer;
+                }
+
+
+                .datosPersonales{
+                    margin-left: 15px;
+                    color:rgb(68, 68, 68);
+                    font-size: 18px;
+
+                    p{
+                        margin-top: inherit;
+                        margin-bottom: inherit;
+                            span{
+                                font-weight: bolder;  
+                            }
+                    }
+                }
+
+                @media only screen and (max-width: 855px) {
+                    .datosPersonales{
+                        margin-left: 15px;
+                        color:rgb(68, 68, 68);
+                        font-size: 9px;
+    
+                        p{
+                            margin-top: inherit;
+                            margin-bottom: inherit;
+                                span{
+                                    font-weight: bolder;  
+                                }
+                        }
+                    }
+                  }
+
+                  @media only screen and (max-width: 730px) {
+                    .datosTop{
+                        flex-direction: row;
+                    }
+                    .datosPersonales{
+                        margin-left: 15px;
+                        color:rgb(68, 68, 68);
+                        font-size: 9px;
+                        display: none;
+    
+                        p{
+                            margin-top: inherit;
+                            margin-bottom: inherit;
+                                span{
+                                    font-weight: bolder;  
+                                }
+                        }
+                    }
+                  }
+                  @media only screen and (max-width: 590px) {
+                  
+                .nombreCaracter{
+                    margin-left: 0px;
+                    flex-wrap: wrap;
+                    font-size: 20px;
+                    margin-top: inherit;
+                    margin-bottom: 10px;
+                    font-weight: bolder;
+                }
+            }
+
+
+              }
+              @media only screen and (max-width: 730px) {
+                &__datos-personaje{
+                    width: 100%;
+                    height: 155px;
+                    display: flex;
+                    flex-wrap: wrap-reverse;
+                    justify-content: center;
+                }
+              }
+
+              @media only screen and (max-width: 430px) {
+                &__datos-personaje{
+                    height: 110px;
+                }
+              }
+          }
+        .false{
+            background-color: #CCCCCC !important;
+        }
+
+          @media only screen and (max-width: 1108px) {
+            .card {
+                width: 400px;
+            }
+          }
+
+          @media only screen and (max-width: 855px) {
+            .card {
+                width: 330px;
+            }
+          }
+
+          @media only screen and (max-width: 730px) {
+            .card {
+                width: 100%;
+                flex-wrap: wrap;
+            }
+          }
+          
+          
+
+    }
+
+
+    @media only screen and (max-width: 730px) {
+        .cardbox {
+            width: 40%;
+            height: 300px;
+            padding: 1em;
+            margin: auto;
+        }
+      }
+
+      @media only screen and (max-width: 430px) {
+        .cardbox {
+            width: 40%;
+            height: 270px;
+            padding: 1em;
+            margin: auto;
+        }
+      }
+
+      
+    @media only screen and (max-width: 330px) {
+        .cardbox {
+            width: 70%;
+            height: 245px;
+            padding: 1em;
+            margin: auto;
+        }
+      }
+
+
+}
