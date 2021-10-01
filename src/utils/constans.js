@@ -1,5 +1,7 @@
-export const URL_API = "https://hp-api.herokuapp.com/api/characters";
+export const URL_API = "http://localhost:5000/personajes";
 
-export const URL_API_ESTUDIANTES = "https://hp-api.herokuapp.com/api/characters/students";
+export const URL_API_ESTUDIANTES = "http://localhost:5000/estudiantes";
 
-export const URL_API_ESTAFF = "https://hp-api.herokuapp.com/api/characters/staff";
+export const URL_API_ESTAFF = "http://localhost:5000/staff";
+
+export const url = "http://localhost:3000";

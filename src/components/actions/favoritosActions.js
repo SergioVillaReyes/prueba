@@ -5,6 +5,7 @@ export const addFavoritoAction = state => {
     };
 };
 
+
 export const deleteFavoritoAction = id => {
     return {
         type:"DELETE_CHARACTER",

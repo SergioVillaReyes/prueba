@@ -13,7 +13,7 @@ export default function MenuTop(){
 
     const [show, setShow] = useState(false);
 
-    const [showFavs, setShowFavs] = useState(false);
+    const [showFavs, setShowFavs] = useState(true);
 
     return (
         <div className="MenuTop">
@@ -21,6 +21,7 @@ export default function MenuTop(){
             <div className="cajas favoritos" onClick={() => setShowFavs(!showFavs)}>FAVORITOS <img className="img1" src={Fav}/></div>
 
             <div className="cajas agregar" onClick={() => setShow(true)}>AGREGAR <img className="img2" src={Add}/></div>
+           
             <ModalAdd onClose={() => setShow(false)} show={show}/>
           
             <DropDown  showFavs={showFavs} />
@@ -32,19 +33,21 @@ export default function MenuTop(){
 
 function DropDown(props){
 
+
     const dispatch = useDispatch();
-    const deleteFav = id => dispatch(deleteFavoritoAction(id));
+    const deleteFav = id => dispatch(deleteFavoritoAction(id)); 
 
-    const favoritos = useSelector(state => state.favoritosReducer.favoritos );
+    const favoritos = useSelector(state => state.favoritosReducer.favoritos);
 
-    localStorage.setItem("favoritos", JSON.stringify(favoritos));
+    localStorage.setItem("favoritos", JSON.stringify(favoritos)); 
+
 
 
     return (
         <div className={`dropdown ${props.showFavs ? 'show' : ''}`}>
        {favoritos.map((favorito, index) =>(
 
-        <div className="personaje">
+        <div className="personaje" key={index}>
         <div className="circular--landscape2">
         <img src={favorito.image}/>
         </div>

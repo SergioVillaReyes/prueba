@@ -5,6 +5,8 @@ import {
   setStateLocalStorage
 } from "./utils/localStorage";
 
+
+
 const localStorageState = getStateLocalStoraga();
 
 const store = createStore(
@@ -18,5 +20,7 @@ store.subscribe(() => {
     favoritos: store.getState().favoritos
   });
 });
+
+console.log('storeasas',store)
 
 export default store;

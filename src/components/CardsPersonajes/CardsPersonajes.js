@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addFavoritoAction } from '../actions/favoritosActions';
 import uuid from 'uuid/v4';
 import useFetch from '../../hooks/useFetch';
+import Swal from 'sweetalert2';
 
 import './CardsPersonajes.scss';
 
@@ -16,7 +17,7 @@ export default function CardsPersonajes(props){
     const dispatch = useDispatch();
     const addFavorito = state => dispatch(addFavoritoAction(state));
 
-   
+
     const onClick = e => {
 
         e.preventDefault();
@@ -32,16 +33,10 @@ export default function CardsPersonajes(props){
 
         const contar = JSON.parse(favoritosStorage);
 
-        // console.log('contar',contar.length);
-        
-        if(contar.length > 4){
 
-            Swal.fire(
-                'Upps!',
-                'Solo puede agregar 5 personajes a favoritos'
-              )
+        console.log('contar',contar.length);
 
-        }else{
+        if(contar.length == 0){
 
             setFormValue({
                 ...formValue,
@@ -50,20 +45,144 @@ export default function CardsPersonajes(props){
                 image
             })
     
-    
-            // const {name, image} = formValue;
             addFavorito({
                 id:uuid(),
                 name,
                 image
                 });
 
+        }
+
+        if(contar.length == 1){
+
+            if(name == contar[0].name){
+                Swal.fire(
+                    'Ya seleccionaste a este personaje',
+                    '',
+                    'warning'
+                  )
+            }else{
+
+                setFormValue({
+                    ...formValue,
+                    id:uuid(),
+                    name,
+                    image
+                })
+        
+                addFavorito({
+                    id:uuid(),
+                    name,
+                    image
+                    });
+
+            }
 
         }
 
 
 
+        if(contar.length == 2){
+
+            if(name == contar[0].name || name == contar[1].name){
+                Swal.fire(
+                    'Ya seleccionaste a este personaje',
+                    '',
+                    'warning'
+                  )
+            }else{
+
+                setFormValue({
+                    ...formValue,
+                    id:uuid(),
+                    name,
+                    image
+                })
+        
+                addFavorito({
+                    id:uuid(),
+                    name,
+                    image
+                    });
+
+
+            }
+
+        }
+
+
+
+        
+        if(contar.length == 3){
+
+            if(name == contar[0].name || name == contar[1].name || name == contar[2].name){
+                Swal.fire(
+                    'Ya seleccionaste a este personaje',
+                    '',
+                    'warning'
+                  )
+            }else{
+
+                setFormValue({
+                    ...formValue,
+                    id:uuid(),
+                    name,
+                    image
+                })
+        
+                addFavorito({
+                    id:uuid(),
+                    name,
+                    image
+                    });
+
+            }
+
+        }
+
+        if(contar.length == 4){
+
+            if(name == contar[0].name || name == contar[1].name || name == contar[2].name || name == contar[3].name){
+                Swal.fire(
+                    'Ya seleccionaste a este personaje',
+                    '',
+                    'warning'
+                  )
+            }else{
+
+                setFormValue({
+                    ...formValue,
+                    id:uuid(),
+                    name,
+                    image
+                })
+        
+                addFavorito({
+                    id:uuid(),
+                    name,
+                    image
+                    });
+
+            }
+
+        }
+
+
+
+
+        if(contar.length >= 5){
+           Swal.fire(
+                'Ups!',
+                'Solo puedes seleccionar 5 favoritos'
+              )
+        }
+
+
+
     }
+
+    // localStorage.setItem("favoritos", JSON.stringify(formValue));
+
 
     const { url } = props;
 
@@ -75,6 +194,7 @@ export default function CardsPersonajes(props){
     if(!personajes.result) {
         return 'Loading....'
     }
+    
     const results = personajes.result;
 
 

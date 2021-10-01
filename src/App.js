@@ -5,6 +5,7 @@ import Header from './components/Header';
 import store from './store';
 import {Provider} from 'react-redux';
 
+// console.log('store',store);
 
 function App() {
 

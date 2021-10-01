@@ -6,11 +6,9 @@ import { ReactComponent as Logo } from "../../assets/img/logo.svg";
 
 import './Header.scss';
 
-export default function Header(props){
+export default function Header(){
 
-    const { urlestudiantes } = props;
-
-    console.log(urlestudiantes);
+    
 
     return (
         <>

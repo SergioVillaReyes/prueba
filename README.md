@@ -1,48 +1,70 @@
+# Getting Started with Create React App
 
-Este proyecto  esta realizado en React JS 17.0.2, utilizando estilos SASS y Flexbox y  JSON server para el manejo de personajes y Redux para agregar a favoritos.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-1.- Para levantar el proyecto es necesario instalar las siguientes dependencias:
+## Available Scripts
 
-json-server
+In the project directory, you can run:
 
-flexbox
+### `yarn start`
 
-react-redux
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-redux
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-sass
+### `yarn test`
 
-uuid
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
+### `yarn build`
 
-Cambiar las rutas en la carpeta utils/constans.js por http://localhost:5000/personajes , http://localhost:5000/estudiantes y http://localhost:5000/staff 
-y correr el comando startjson para iniciar json server en el puerto 5000 y poder hacer el agregado de personaje.
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-2.- Al ingresar veremos un listado de personajes, con colores en el fondo de la imagen  correspondientes a la casa a ala cual pertenecen.
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-3.- Los botones centrales sirven para filtrar a los personajes ya sea por STAFF o ESTUDIANTES.
+### `yarn eject`
 
-4.- Se cuenta con la funcionalidad de agregar personajes extras.
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-5.- Al dar click en la banderilla de la esquina se agregan los personajes a un menú superior a manera de "favoritos", ahí mismo podemos eliminar ese personaje de la sección de favoritos también.
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-6.- Diseno responsivo.
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
+## Learn More
 
-Me parecio interesante la tematica del ejercicio ya que pude darme cuenta que el comportamiento del sitio seria para darse cuenta de la forma de manipular los objetos en flexbok de arriba a abajo o viceversa, la seleccion de colores a cada casa y la creacion de personajeson trabajos con los que se puede medir bien el nivel de manipulacion de alguien sobre su codigo.
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
+To learn React, check out the [React documentation](https://reactjs.org/).
 
+### Code Splitting
 
-De haber tenido tiempo lo hubiera hecho bien, sali de la ciudad y solo tube el domingo para construir el ejercicio, hay algunas areas interesantes en react js que me gustagria pulir, por mucho tiempo trabaje con php y hasta ahora me parece bien, pero adaptarse a las tecnologiases un punto muy importante React js me ha facinado la forma en la que se pueden hacer sitios muy rapidos y obvio las paginas no cargan en si es algo que note desde luego en facebook quienes hicieron la libreria.
-El ejercicio se veia como una applicacion para jovenes, tal ves de poder se hubiera hecho mas interactiva y con mas funcionalidades falto terminar el crud de agregar personajes solo se nos especifico que se agregaran personajes hubiera faltado editarlos y eliminarlos, el diseno en si se me hizo un poco simple pero es para ejectos de una prueba.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
+### Analyzing the Bundle Size
 
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-Hubo algunas areas donde me atore mucho pero mas que nada fue por lo apresurado, los colores  de las tarjetas conforme a las casas lo resolvi utilzando el nombre de la casa como className asi cada quien muestra su dato y en los estilos SASSS simplemente se le daba un color distinto.
-Me limite a usar SASS yFlexbox por las indicaciones que se nos dieron, pero de ser mas comodo hubiera utilzado Boostrapt y/o Material UI, es muy comodo trabajar con el sistema de columnas de boostrapt.
-Debido a la gran cantidad de librerias que hay para trabajar en React no siemrpe tengo  a la memoria la adecuada, pero esto es por habito.
+### Making a Progressive Web App
 
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `yarn build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

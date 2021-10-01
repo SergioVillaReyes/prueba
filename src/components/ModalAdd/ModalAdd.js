@@ -1,6 +1,7 @@
 import React, {useEffect,useState } from 'react';
-import {URL_API} from '../../utils/constans';
+import {URL_API, url} from '../../utils/constans';
 import uuid from 'uuid/v4';
+import Swal from 'sweetalert2';
 
 
 import './ModalAdd.scss';
@@ -11,34 +12,67 @@ export default function ModalAdd(props){
     const [formValue, setFormValue] =  useState({
         id:"",
         name:"",
-        cumple:"",
-        colorojos:"",
-        colopelo:"",
-        genero:"",
+        dateOfBirth:"",
+        eyeColour:"",
+        hairColour:"",
+        gender:"",
         posicion:"",
-        imagen:""
+        image:"https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png"
     });
 
     const onChange = e => {
         setFormValue({
             ...formValue,
             id:uuid(),
-            [e.target.name]: e.target.value,
-            [e.target.cumple]: e.target.value,
-            [e.target.colorojos]: e.target.value,
-            [e.target.colopelo]: e.target.value,
-            [e.target.genero]: e.target.value,
-            [e.target.posicion]: e.target.value,
-            [e.target.imagen]: e.target.value
+            [e.target.name]: e.target.value
         })
     }
 
     const onSubmit = async (e) => {
 
-        window.location.replace('...');
+        e.preventDefault();
+
+        const {name, dateOfBirth, eyeColour,  hairColour, gender,  posicion, image} = formValue;
+
+        if( !name || !dateOfBirth || !eyeColour || !hairColour || !gender || !posicion){
+
+            Swal.fire(
+                'Espera',
+                'Todos los campos son obligatorios',
+                'warning'
+              )
+        
+          }else{
+
+            const addPersonaje = JSON.stringify(formValue);
+
+            const respuesta = await fetch(URL_API, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                  },
+                body: addPersonaje,
+            }); 
+
+            const peticion = await respuesta.json();
+
+            if(peticion){
+
+                Swal.fire({
+                    title: 'El personaje '+name+' fue agregado correctamente',
+                    confirmButtonText: 'OK',
+                  }).then((result) => {
+                    if (result.isConfirmed) {
+                    props.onClose();
+                    setInterval(function(){ window.location = url; }, 1000);
+                    }
+                  })
+
+            }
+
+          }
     }
 
-    console.log('formValue',formValue);
 
     const closeOnEscapeKeyDown = (e) => {
         if((e.charCode || e.keyCode)===27) {
@@ -54,6 +88,8 @@ export default function ModalAdd(props){
         }
     },[])
 
+
+
     
 
     return (
@@ -63,7 +99,7 @@ export default function ModalAdd(props){
                     <h4 className="modal-title">Agregar un personaje</h4>
                     <p onClick={props.onClose}>X</p>
                 </div>
-                 <form method="post" action={URL_API} onChange={onChange} onSubmit={onSubmit}>
+                 <form onChange={onChange} onSubmit={onSubmit}>
                 <div className="modal-body">
                    
                     <div className="inputs">
@@ -91,7 +127,7 @@ export default function ModalAdd(props){
 
                     <div className="inputs">
                     <p>FOTOGRAFIA</p>
-                    <input className="inputfile" type="text" name="image" id="file" value="https://previews.123rf.com/images/thesomeday123/thesomeday1231712/thesomeday123171200008/91087328-icono-de-perfil-de-avatar-predeterminado-para-mujer-marcador-de-posici%C3%B3n-de-foto-gris-vector-de-ilus.jpg"/>
+                    <input className="inputfile" type="file" name="image" id="file" />
                     <label for="file">SUBE TU ARCHIVO</label>
                     </div> 
                     

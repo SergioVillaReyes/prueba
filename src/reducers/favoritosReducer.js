@@ -7,7 +7,7 @@ export default function(state = initialProps, action){
         case "ADD_CHARACTER":
             return {
                 ...state,
-                favoritos: [...state.favoritos, action.payload]
+                favoritos: [...state.favoritos, action.payload],
             };
         case "DELETE_CHARACTER":
                 return {

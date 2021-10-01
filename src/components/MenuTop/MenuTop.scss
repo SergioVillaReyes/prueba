@@ -158,10 +158,10 @@
 
   @media only screen and (max-width:550px) {
     .dropdown.show{
-        width: 76%;
+        width: 100%;
         height: auto;
         background-color: #6B63B5;
-        margin-left: -76%;
+        margin-left: -100%;
         padding-top: 0px;
         padding-bottom: 30px;
      }
@@ -175,7 +175,7 @@
         align-items:end;
         z-index: 5;
     .cajas{
-        width: 30%;
+        width: 50%;
     }
 }
     

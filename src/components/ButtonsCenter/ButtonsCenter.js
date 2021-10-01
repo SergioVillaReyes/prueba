@@ -12,6 +12,7 @@ return (
     <>
     <div className="cajabotones">
     <button onClick={() => setUrlE(`${URL_API_ESTUDIANTES}`)}>ESTUDIANTES</button>
+    <button onClick={() => setUrlE(`${URL_API}?alive=true`)}>VIVOS</button>
     <button onClick={() => setUrlE(`${URL_API_ESTAFF}`)}>STAFF</button>
     </div>
     <CardsPersonajes url={urlE}/>
